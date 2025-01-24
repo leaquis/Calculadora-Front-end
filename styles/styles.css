@@ -44,6 +44,11 @@ button {
     cursor: pointer;
 }
 
+.reset {
+    height: 50px;
+    width: 100%;
+}
+
 button:hover {
     background-color: #ccc6c6;
 }
@@ -52,6 +57,6 @@ button:hover {
     color: #333;
 }
 
-.operador {
+.operador, .reset {
     color: #f7931b;
 }

@@ -3,6 +3,7 @@ const botaoIgual = document.querySelector(".igual");
 const botaoPonto = document.querySelector(".ponto");
 const botoesNumeros = document.querySelectorAll(".num");
 const botoesOperadores = document.querySelectorAll(".operador");
+const botaoResetar = document.querySelector(".reset");
 
 let operacaoAtual = "";
 let operador = null;
@@ -11,6 +12,14 @@ let calculando = false;
 
 function atualizaDisplay() {
     display.value = operacaoAtual;
+}
+
+function resetar() {
+    operacaoAtual = 0;
+    resultado = "";
+    operandoAnterior = "";
+    operandoAtual = "";
+    atualizaDisplay();
 }
 
 function insereNumero(evento) {
@@ -47,7 +56,7 @@ function insereOperador(evento) {
 
 function calcula() {
     let resultado = null;
-    const operandoAnterior = parseFloat(valor);
+    const operandoAnterior = parseFloat(valorAnterior);
     const operandoAtual = parseFloat(operacaoAtual);
 
     switch (operador) {
@@ -75,4 +84,5 @@ botaoPonto.addEventListener("click", inserePonto);
 botoesNumeros.forEach((botao) => botao.addEventListener("click", insereNumero));
 botoesOperadores.forEach((botao) => botao.addEventListener("click", insereOperador));
 
+botaoResetar.addEventListener("click", resetar)
 botaoIgual.addEventListener("click", calcula)
