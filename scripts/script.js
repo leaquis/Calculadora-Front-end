@@ -15,10 +15,12 @@ function atualizaDisplay() {
 }
 
 function resetar() {
-    operacaoAtual = 0;
-    resultado = "";
-    operandoAnterior = "";
-    operandoAtual = "";
+    operacaoAtual = "";
+    operandoAnterior = 0;
+    operandoAtual = 0;
+    valorAnterior = 0;
+    resultado = 0;
+    operador = null;
     atualizaDisplay();
 }
 
